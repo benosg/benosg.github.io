@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    max-width: 540px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: justify;
 }
@@ -104,9 +104,9 @@ p {
 
 /* Theme Icon */
 html.light {
-    background-color: #fdebf3;
+    background-color: #e5e4e7;
     color: #1e1e2e;
-}
+}   
 
 .light .title-link a {
     color: #1e1e2e;

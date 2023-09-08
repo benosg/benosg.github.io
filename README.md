@@ -16,8 +16,7 @@ To get started with using this portfolio template, follow these steps:
 1. **Clone the Repository:** Clone this repository to your local machine using Git.
 
 ```scheme
-git clone https://github.com/ttomczak3/Milky-Way.git
-cd Milky-Way
+clone
 ```
 2. **Install Dependencies:** Ensure you have Node.js and npm installed. Then, install the project dependencies.
 
