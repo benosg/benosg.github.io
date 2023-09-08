@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://benosg.benosserrano.dev",
+  site: "https://blog.benosserrano.dev",
   base: "/",
 });
