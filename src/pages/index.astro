@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+const pageTitle = "Beno Dev";
+---
+
+<Layout pageTitle={pageTitle}>
+  <div class="gif">
+    <img
+      width="300"
+      height="259"
+      alt="RaccoonSpaceGif"
+      src="/benoweb/space.webp"
+    />
+  </div>
+  <h1>Beno Dev</h1>
+  <small>backend develop</small>
+  <h2>About</h2>
+  <p>
+    ¡Hola! Soy Beno un apasionado desarrollador backend senior con más de dos
+    décadas de experiencia en la industria de la tecnología. A lo largo de mi
+    carrera, me he convertido en un experto en el ecosistema de Microsoft,
+    especializándome en tecnologías como .NET, C#, y SQL Server. Mi viaje
+    profesional me ha llevado a trabajar en una amplia gama de proyectos
+    desafiantes y emocionantes, donde he tenido el privilegio de colaborar con
+    equipos para crear soluciones robustas y escalables. Mi enfoque principal ha
+    sido el desarrollo de APIs de alto rendimiento, lo que me ha permitido
+    facilitar la comunicación eficiente entre aplicaciones y sistemas. Algunos
+    de los aspectos más destacados de mi carrera incluyen:
+  </p>
+  <p>
+    Soluciones Escalables y Eficientes: Siempre he priorizado la escalabilidad y
+    la eficiencia en mis proyectos. Crear soluciones que puedan crecer con las
+    necesidades de los usuarios y mantener un rendimiento óptimo es fundamental
+    para mí.
+  </p>
+  <p>
+    Tecnologías de Microsoft: Mi devoción por las tecnologías de Microsoft ha
+    sido una constante en mi carrera. Mi experiencia con .NET, C#, y SQL Server
+    me ha permitido desarrollar aplicaciones de alta calidad y mantenerme al
+    tanto de las últimas tendencias en el mundo de la tecnología de Microsoft.
+  </p>
+
+  <p>
+    Experiencia Sólida: Con dos décadas en la industria, he acumulado un
+    profundo conocimiento y experiencia en el desarrollo de aplicaciones
+    backend. Mi historial incluye la entrega exitosa de proyectos para diversas
+    industrias, desde laboratorios hasta edudación y más.
+  </p>
+
+  <p>
+    Colaboración Interdisciplinaria: Disfruto trabajando en equipos
+    multidisciplinarios y multiculturalidad, ya que creo que la diversidad de
+    ideas y perspectivas enriquece enormemente el proceso de desarrollo de
+    software.
+  </p>
+
+  <div class="button">
+    <a href="/benoweb/works/">
+      <button>My portfolio</button>
+    </a>
+  </div>
+  <h2>Skills</h2>
+  <div class="link-images">
+    <img
+      width="46"
+      height="46"
+      alt="C#"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg"
+    />
+    <img
+      width="46"
+      height="46"
+      alt="DotNetCore"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+    />
+    <img
+      width="46"
+      height="46"
+      alt="Bootstrap"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg"
+    />
+    <img
+      width="46"
+      height="46"
+      alt="CSS"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"
+    />
+    <img
+      width="46"
+      height="46"
+      alt="HTML"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"
+    />
+    <img
+      width="46"
+      height="46"
+      alt="JavaScript"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
+    />
+    <img
+      width="46"
+      height="46"
+      alt="PostGres"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg"
+    />
+  </div>
+  <h2>Interests</h2>
+  <p>
+    Fuera del mundo del desarrollo, me encanta mantenerme al día con las últimas
+    tendencias tecnológicas, experimentar con nuevas tecnologías y participar
+    activamente en comunidades de desarrolladores para aprender y compartir
+    conocimientos. Estoy emocionado por las oportunidades futuras y espero
+    seguir contribuyendo al mundo de la tecnología con mi experiencia y pasión
+    por el desarrollo backend. Si estás interesado en colaborar en un proyecto
+    emocionante o simplemente deseas conectarte, ¡no dudes en ponerte en
+    contacto conmigo!
+  </p>
+</Layout>
+<style>
+  /* small */
+  small {
+    background-color: #584966;
+    color: #fdebf3;
+    border-radius: 6px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    padding: 0.3em 0.6em 0.2em;
+  }
+
+  /* Button */
+  button {
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid #78c2ad;
+    border-radius: 8px;
+    color: #78c2ad;
+    font:
+      600 16px "Josefin Sans",
+      sans-serif;
+    padding: 8px 16px;
+    transition:
+      background-color 0.4s,
+      color 0.4s;
+  }
+
+  button:hover {
+    background-color: #78c2ad;
+    color: #fdebf3;
+    cursor: pointer;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  /* Skill images */
+  .link-images img {
+    margin: 16px 4px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .link-images img {
+      height: 30px;
+      width: 30px;
+      margin: 16px 1px;
+    }
+  }
+</style>
