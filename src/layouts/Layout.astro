@@ -14,6 +14,12 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const selectedTheme = savedTheme ?? (prefersDark ? "dark" : "light");
+      document.documentElement.classList.toggle("light", selectedTheme === "light");
+    </script>
   </head>
   <body>
     <Header />
