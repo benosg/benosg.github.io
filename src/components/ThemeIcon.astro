@@ -1,6 +1,6 @@
 ---
 ---
-<button id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+<button id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema" aria-pressed="false">
   <svg width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="sun"
@@ -17,7 +17,7 @@
 
 <style>
   #themeToggle {
-    border: 1px solid rgba(113, 120, 124, 0.2);
+    border: 1px solid var(--outline-variant);
     border-radius: 999px;
     width: 1.9rem;
     height: 1.9rem;
@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: center;
     background: transparent;
+    color: var(--on-surface);
     padding: 0;
   }
 
@@ -50,31 +51,22 @@
 </style>
 
 <script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
+  const root = document.documentElement;
+  const toggleButton = document.getElementById("themeToggle");
 
-  if (theme === "dark") {
-    document.documentElement.classList.remove("light");
-  } else {
-    document.documentElement.classList.add("light");
-  }
-
-  window.localStorage.setItem("theme", theme);
-
-  const handleToggleClick = () => {
-    const element = document.documentElement;
-    element.classList.toggle("light");
-
-    const esClaro = element.classList.contains("light");
-    localStorage.setItem("theme", esClaro ? "light" : "dark");
+  const syncToggleState = () => {
+    const isLightTheme = root.classList.contains("light");
+    toggleButton?.setAttribute("aria-pressed", String(isLightTheme));
   };
 
-  document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+  syncToggleState();
+
+  const handleToggleClick = () => {
+    root.classList.toggle("light");
+    const isLightTheme = root.classList.contains("light");
+    localStorage.setItem("theme", isLightTheme ? "light" : "dark");
+    syncToggleState();
+  };
+
+  toggleButton?.addEventListener("click", handleToggleClick);
 </script>

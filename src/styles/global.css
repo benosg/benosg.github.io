@@ -10,6 +10,7 @@
   --on-primary: #ffffff;
   --on-surface: #191c1d;
   --outline: #71787c;
+  --outline-variant: rgba(113, 120, 124, 0.2);
   --outline-ghost: rgba(113, 120, 124, 0.15);
   --secondary-container: #d5e0f7;
   --on-secondary-container: #586377;
@@ -22,6 +23,25 @@ html {
   color: var(--on-surface);
   font-family: 'Inter', sans-serif;
   line-height: 1.65;
+  scroll-behavior: smooth;
+}
+
+html:not(.light) {
+  --surface: #111618;
+  --surface-container-low: #161d20;
+  --surface-container-lowest: #1d2528;
+  --surface-variant: #273338;
+  --primary: #86b3c5;
+  --primary-container: #5b8b9e;
+  --on-primary: #0f1618;
+  --on-surface: #e7ecee;
+  --outline: #9aa7ad;
+  --outline-variant: rgba(154, 167, 173, 0.22);
+  --outline-ghost: rgba(154, 167, 173, 0.2);
+  --secondary-container: #243246;
+  --on-secondary-container: #ccd7ef;
+  --tertiary: #86aeb0;
+  --ambient-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
 body {
@@ -45,7 +65,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 8vw, 3.5rem);
+  font-size: clamp(2.8rem, 8vw, 3.5rem);
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
@@ -66,7 +86,7 @@ a {
 }
 
 section {
-  padding: 5.5rem clamp(1.25rem, 4vw, 3rem);
+  padding: 6rem clamp(1.25rem, 4vw, 3rem);
   margin-top: 6rem;
   background: var(--surface-container-low);
   border-radius: 0.75rem;
@@ -112,14 +132,14 @@ section {
   gap: 1rem;
   padding: 0.7rem 1rem;
   border-radius: 0.75rem;
-  background: rgba(248, 249, 250, 0.8);
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
   backdrop-filter: blur(12px);
   box-shadow: var(--ambient-shadow);
 }
 
 .title-link,
 .nav-links {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -174,18 +194,24 @@ section {
   cursor: pointer;
 }
 
-.link-images {
+.tech-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.link-images img {
-  width: 42px;
-  height: 42px;
-  padding: 0.35rem;
-  background: var(--surface-container-lowest);
+.tech-chips li {
+  padding: 0.38rem 0.9rem;
   border-radius: 999px;
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .link-card-grid {
@@ -218,19 +244,5 @@ footer small {
   .nav-bar {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 0.65rem 0.95rem;
-  }
-
-  .link-card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 3.5rem 1.15rem;
-    margin-top: 4.5rem;
   }
 }

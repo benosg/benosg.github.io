@@ -1,6 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 const pageTitle = "Beno Dev";
+const techStack = [
+  "Azure",
+  "C#",
+  ".NET",
+  "SQL Server",
+  "PostgreSQL",
+  "Docker",
+  "Linux",
+  "Git",
+  "Arquitectura de Software",
+  "Seguridad",
+];
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -39,22 +51,9 @@ const pageTitle = "Beno Dev";
 
     <section>
       <h2>Stack tecnológico</h2>
-      <div class="link-images">
-        <img width="46" height="46" alt="Azure" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" />
-        <img width="46" height="46" alt="Visual Studio" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" />
-        <img width="46" height="46" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" />
-        <img width="46" height="46" alt="DotNetCore" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" />
-        <img width="46" height="46" alt="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" />
-        <img width="46" height="46" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" />
-        <img width="46" height="46" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" />
-        <img width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
-        <img width="46" height="46" alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg" />
-        <img width="46" height="46" alt="SQL Server" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" />
-        <img width="46" height="46" alt="MySQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg" />
-        <img width="46" height="46" alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg" />
-        <img width="46" height="46" alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg" />
-        <img width="46" height="46" alt="Linux" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
-      </div>
+      <ul class="tech-chips" role="list">
+        {techStack.map((skill) => <li>{skill}</li>)}
+      </ul>
     </section>
 
     <section>
@@ -62,9 +61,9 @@ const pageTitle = "Beno Dev";
       <div class="body-copy">
         <p>
           Fuera de los proyectos productivos, dedico tiempo a arquitectura de
-          software, codificación segura y tendencias de IA para productos reales. Busco
-          colaborar en iniciativas donde la ingeniería backend sea un habilitador
-          silencioso pero decisivo para el negocio.
+          software, codificación segura y tendencias de IA para productos reales.
+          Busco colaborar en iniciativas donde la ingeniería backend sea un
+          habilitador silencioso pero decisivo para el negocio.
         </p>
       </div>
     </section>
