@@ -20,6 +20,7 @@ const { href, image, title, body } = Astro.props;
         alt="ProjectImage"
       />
     </div>
+    <span class="meta">technical case</span>
     <h3 class="card-title">{title}</h3>
     <p class="card-txt">{body}</p>
   </a>
@@ -32,9 +33,9 @@ const { href, image, title, body } = Astro.props;
 
   .link-card > a {
     display: grid;
-    gap: 2.75rem;
+    gap: 1.1rem;
     height: 100%;
-    padding: 1.4rem;
+    padding: 1.5rem;
     border-radius: 0.75rem;
     background: var(--surface-container-lowest);
     outline: 1px solid var(--outline-ghost);
@@ -50,12 +51,22 @@ const { href, image, title, body } = Astro.props;
 
   .img {
     text-align: center;
+    padding-bottom: 1.6rem;
   }
 
   img {
     border-radius: 0.5rem;
     max-width: 100%;
     height: auto;
+  }
+
+  .meta {
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--outline);
   }
 
   h3 {
