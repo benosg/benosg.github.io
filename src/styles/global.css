@@ -44,10 +44,14 @@ html:not(.light) {
   --ambient-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
-  max-width: 1080px;
-  padding: 1.5rem clamp(1.2rem, 3vw, 2.5rem) 3rem;
+  max-width: 1200px;
+  padding: 1.5rem clamp(1.2rem, 3vw, 2.8rem) 4rem;
 }
 
 header {
@@ -85,23 +89,31 @@ a {
   color: inherit;
 }
 
+main {
+  display: grid;
+  gap: 6rem;
+}
+
 section {
-  padding: 6rem clamp(1.25rem, 4vw, 3rem);
-  margin-top: 6rem;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 3rem);
   background: var(--surface-container-low);
-  border-radius: 0.75rem;
+  border-radius: 0.9rem;
 }
 
 .hero {
   margin-top: 2rem;
-  padding-top: 4rem;
   background: var(--surface);
+  min-height: 68vh;
+  display: grid;
+  align-content: center;
+  gap: 1.4rem;
 }
 
 .kicker {
   display: inline-block;
-  margin: 1rem 0 2rem;
-  padding: 0.4rem 0.7rem;
+  width: fit-content;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
   border-radius: 999px;
   background: var(--secondary-container);
   color: var(--on-secondary-container);
@@ -117,8 +129,12 @@ section {
   max-width: 70ch;
 }
 
+.axis {
+  padding-left: clamp(0rem, 2.5vw, 2rem);
+}
+
 .gif {
-  margin: 0 0 1.75rem;
+  margin: 0;
 }
 
 .gif img {
@@ -166,11 +182,12 @@ section {
 .title-link a:focus {
   text-decoration: underline;
   text-decoration-color: var(--tertiary);
+  text-decoration-thickness: 1px;
   text-underline-offset: 6px;
 }
 
 .button {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .button a {
@@ -223,8 +240,34 @@ section {
   margin: 0;
 }
 
-main > section:last-of-type {
-  margin-bottom: 0;
+.arch-diagram {
+  margin-top: 2.25rem;
+  padding: 1.4rem;
+  border-radius: 0.75rem;
+  background: var(--surface-variant);
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(8rem, 1fr));
+  gap: 1rem;
+}
+
+.node {
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  background: var(--surface-container-lowest);
+  outline: 1px solid color-mix(in srgb, var(--outline) 35%, transparent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.connector {
+  height: 1px;
+  margin: 0.8rem 0;
+  background: var(--outline);
+  opacity: 0.45;
 }
 
 html.light {
@@ -241,8 +284,20 @@ footer small {
     padding-top: 1rem;
   }
 
+  main {
+    gap: 5rem;
+  }
+
   .nav-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .arch-grid {
+    grid-template-columns: 1fr;
   }
 }
