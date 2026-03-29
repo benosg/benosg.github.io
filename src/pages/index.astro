@@ -48,85 +48,169 @@ const milestones = [
 ---
 
 <Layout pageTitle={pageTitle}>
-  <main>
-    <section class="hero">
-      <div class="gif axis">
-        <img width="300" height="259" alt="Beno" src="/logo.png" />
-      </div>
-      <div class="axis">
-        <h1>El Arquitecto Silencioso</h1>
-      </div>
-      <span class="kicker axis">25+ años · ingeniería backend</span>
-      <div class="body-copy axis">
-        <p>
-          Soy Beno, desarrollador backend con más de 25 años de experiencia en la
-          industria tecnológica. Mi viaje profesional comenzó con Clipper y Pascal,
-          evolucionó por ecosistemas empresariales y hoy se centra en .NET, C#,
-          SQL Server y Azure.
-        </p>
-        <p>
-          En los últimos años he complementado la práctica profesional con docencia
-          en desarrollo seguro de software. Actualmente curso Ingeniería Civil
-          Informática en la Universidad Andrés Bello para profundizar arquitectura,
-          seguridad e inteligencia artificial aplicada.
-        </p>
-        <p>
-          Me motiva construir sistemas estables, escalables y de alto rendimiento,
-          trabajando en equipos multidisciplinarios donde las decisiones técnicas
-          se sustentan en claridad, colaboración y responsabilidad operacional.
-        </p>
-      </div>
-      <div class="button axis">
-        <a href="/works/">
-          <button>Ver portafolio</button>
-        </a>
-      </div>
-    </section>
-
-    <section>
-      <div class="axis">
-        <h2>Stack tecnológico</h2>
-        <ul class="tech-chips" role="list">
-          {techStack.map((skill) => <li>{skill}</li>)}
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <div class="axis">
-        <h2>Arquitectura de referencia</h2>
-        <div class="body-copy">
-          <p>
-            Diseños de backend orientados a estabilidad: fronteras de dominio
-            explícitas, observabilidad desde el inicio y despliegues predecibles.
+  <main class="landing-main">
+    <section class="landing-hero" id="home">
+      <div class="section-shell hero-grid">
+        <div class="hero-copy">
+          <span class="label">Senior Systems Architect</span>
+          <h1>Beno</h1>
+          <p class="hero-subtitle">
+            Backend Developer | .NET | SQL Server | Azure | Arquitectura |
+            Seguridad | IA
           </p>
-        </div>
-        <div class="arch-diagram" aria-label="diagrama de arquitectura simplificado">
-          <div class="arch-grid">
-            <div class="node">API Gateway</div>
-            <div class="node">Servicios .NET</div>
-            <div class="node">Mensajería</div>
+          <p class="hero-lead">
+            Más de 25 años construyendo soluciones backend sólidas, escalables y
+            seguras.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">Explorar Proyectos</a>
+            <a href="/works/" class="btn-secondary">Ver Portafolio</a>
           </div>
-          <div class="connector"></div>
-          <div class="arch-grid">
-            <div class="node">PostgreSQL</div>
-            <div class="node">SQL Server</div>
-            <div class="node">Telemetry / SIEM</div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <img src="/space.webp" alt="Arquitectura backend" />
+          <div class="hero-stat">25+</div>
+          <div class="hero-focus">
+            <p class="label">Current Focus</p>
+            <p>IA Aplicada y Arquitecturas de Alta Disponibilidad</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="axis">
-        <h2>Intereses</h2>
-        <div class="body-copy">
+    <section class="band" id="about">
+      <div class="section-shell about-grid">
+        <div>
+          <p class="label">Sobre mí</p>
+          <h2>La evolución de la precisión.</h2>
+        </div>
+        <div class="body-grid">
           <p>
-            Fuera de los proyectos productivos, dedico tiempo a arquitectura de
-            software, codificación segura y tendencias de IA para productos reales.
-            Busco colaborar en iniciativas donde la ingeniería backend sea un
-            habilitador silencioso pero decisivo para el negocio.
+            Mi viaje en desarrollo comenzó con fundamentos rigurosos en Clipper y
+            Pascal. Esa disciplina formó mi enfoque: el código no solo debe
+            funcionar, también debe ser eficiente por diseño.
           </p>
+          <p>
+            Hoy esa base se expresa en arquitecturas modernas sobre .NET, Azure e
+            inteligencia artificial, priorizando seguridad, observabilidad y
+            escalabilidad como pilares no negociables.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" id="experience">
+      <div class="section-shell">
+        <p class="label">Trayectoria</p>
+        <div class="timeline">
+          {milestones.map((item) => (
+            <article class="milestone">
+              <p class="milestone-years">{item.years}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+              <span class="era-chip">{item.era}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="stack">
+      <div class="section-shell">
+        <p class="label">Ecosistema tecnológico</p>
+        <h2>Herramientas seleccionadas para máxima fiabilidad.</h2>
+        <div class="stack-grid">
+          {stackGroups.map((group) => (
+            <article class="stack-card">
+              <span class="stack-icon">{group.icon}</span>
+              <h3>{group.title}</h3>
+              <ul class="tech-chips" role="list">
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" id="projects">
+      <div class="section-shell">
+        <p class="label">Proyectos</p>
+        <h2>Arquitectura en acción</h2>
+        <div class="projects-grid">
+          <article class="project">
+            <img src="/pc.png" alt="Enterprise API Gateway" />
+            <h3>Enterprise API Gateway</h3>
+            <p>
+              Plataforma de alta disponibilidad para más de 1M de peticiones
+              diarias con seguridad integrada.
+            </p>
+          </article>
+          <article class="project">
+            <img src="/blog.webp" alt="AI Logistics Engine" />
+            <h3>AI Logistics Engine</h3>
+            <p>
+              Motor de optimización de rutas con algoritmos de decisión e
+              integración de LLMs para reportes operacionales.
+            </p>
+          </article>
+          <article class="project">
+            <img src="/laptop.webp" alt="Secure Core Banking" />
+            <h3>Secure Core Banking</h3>
+            <p>
+              Modernización de base crítica SQL Server con cifrado a nivel de
+              celda y auditoría reforzada.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="teaching" id="teaching">
+      <div class="section-shell teaching-grid">
+        <div>
+          <p class="label">Docencia y mentoría</p>
+          <h2>Desarrollo seguro de software.</h2>
+          <p>
+            Comparto experiencia formando arquitectos backend con foco en
+            seguridad desde el diseño y escritura de código defensivo.
+          </p>
+        </div>
+        <div class="teaching-box">
+          <p class="teaching-number">500+</p>
+          <p class="label">Alumnos formados</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" id="interests">
+      <div class="section-shell">
+        <p class="label">Áreas de interés</p>
+        <div class="interests-grid">
+          <article>
+            <h3>IA Aplicada</h3>
+            <p>
+              Explorando cómo los LLMs optimizan procesos backend y aceleran
+              decisiones técnicas.
+            </p>
+          </article>
+          <article>
+            <h3>Arquitectura Backend</h3>
+            <p>
+              Diseñando resiliencia, observabilidad y eficiencia en sistemas
+              distribuidos de gran escala.
+            </p>
+          </article>
+          <article>
+            <h3>Aprendizaje Continuo</h3>
+            <p>
+              Manteniéndome actualizado sin perder la disciplina de los
+              fundamentos computacionales.
+            </p>
+          </article>
         </div>
       </div>
     </section>
