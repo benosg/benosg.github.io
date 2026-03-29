@@ -1,53 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-const pageTitle = "Works";
+const pageTitle = "Trabajos";
 ---
 
 <Layout pageTitle={pageTitle}>
-  <div class="gif">
-    <img width="300" height="259" alt="works" src="/pc.png" />
-  </div>
-  <h2>Contributions</h2>
-  <ul role="list" class="link-card-grid">
-    <Card
-      href="https://github.com/benosg"
-      image="/GitHub.webp"
-      title="Open-source 1"
-      body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-    />
-    <Card
-      href="https://github.com/"
-      image="/GitHub.webp"
-      title="Open-source 2"
-      body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-    />
-  </ul>
-  <h2>Projects</h2>
-  <ul role="list" class="link-card-grid">
-    <Card
-      href="https://github.com/"
-      image="/GitHub.webp"
-      title="Project 1"
-      body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-    />
-    <Card
-      href="https://github.com/"
-      image="/GitHub.webp"
-      title="Project 2"
-      body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-    />
-    <Card
-      href="https://github.com/"
-      image="/GitHub.webp"
-      title="Project 3"
-      body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-    />
-    <Card
-      href="https://github.com/"
-      image="/GitHub.webp"
-      title="Project 4"
-      body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-    />
-  </ul>
+  <main>
+    <section class="hero">
+      <div class="gif">
+        <img width="300" height="259" alt="trabajos" src="/pc.png" />
+      </div>
+      <h1>Arquitectura de Sistemas</h1>
+      <span class="kicker">Trabajo backend seleccionado</span>
+    </section>
+
+    <section>
+      <h2>Contribuciones</h2>
+      <ul role="list" class="link-card-grid">
+        <Card
+          href="https://github.com/benosg"
+          image="/GitHub.webp"
+          title="Código abierto 1"
+          body="Descripción breve del proyecto, enfoque técnico y resultados obtenidos en producción"
+        />
+        <Card
+          href="https://github.com/"
+          image="/GitHub.webp"
+          title="Código abierto 2"
+          body="Descripción breve del proyecto, enfoque técnico y resultados obtenidos en producción"
+        />
+      </ul>
+    </section>
+
+    <section>
+      <h2>Proyectos</h2>
+      <ul role="list" class="link-card-grid">
+        <Card
+          href="https://github.com/"
+          image="/GitHub.webp"
+          title="Proyecto 1"
+          body="Descripción breve del proyecto, enfoque técnico y resultados obtenidos en producción"
+        />
+        <Card
+          href="https://github.com/"
+          image="/GitHub.webp"
+          title="Proyecto 2"
+          body="Descripción breve del proyecto, enfoque técnico y resultados obtenidos en producción"
+        />
+        <Card
+          href="https://github.com/"
+          image="/GitHub.webp"
+          title="Proyecto 3"
+          body="Descripción breve del proyecto, enfoque técnico y resultados obtenidos en producción"
+        />
+        <Card
+          href="https://github.com/"
+          image="/GitHub.webp"
+          title="Proyecto 4"
+          body="Descripción breve del proyecto, enfoque técnico y resultados obtenidos en producción"
+        />
+      </ul>
+    </section>
+  </main>
 </Layout>
