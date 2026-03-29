@@ -1,17 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "Beno Dev";
-const techStack = [
-  "Azure",
-  "C#",
-  ".NET",
-  "SQL Server",
-  "PostgreSQL",
-  "Docker",
-  "Linux",
-  "Git",
-  "Arquitectura de Software",
-  "Seguridad",
+const pageTitle = "Beno | Senior Backend Architect";
+
+const stackGroups = [
+  {
+    title: "Languages & Core",
+    icon: "⌘",
+    items: ["C#", ".NET 8", "SQL"],
+  },
+  {
+    title: "Cloud & Infra",
+    icon: "☁",
+    items: ["Azure", "Docker", "CI/CD"],
+  },
+  {
+    title: "Security",
+    icon: "◈",
+    items: ["OAuth2", "OWASP", "Encryption"],
+  },
+  {
+    title: "AI & Logic",
+    icon: "◎",
+    items: ["OpenAI API", "Semantic Kernel"],
+  },
+];
+
+const milestones = [
+  {
+    years: "2018 - Presente",
+    title: "Cloud Architecture & AI Integration",
+    body: "Liderazgo técnico en migración de sistemas legacy a entornos cloud-native en Azure, incorporando IA para optimización de operaciones backend.",
+    era: "Current Era",
+  },
+  {
+    years: "2010 - 2018",
+    title: "Enterprise .NET & SQL Scaling",
+    body: "Diseño de APIs robustas y plataformas de datos transaccionales para dominios de alta carga en finanzas y logística.",
+    era: "Growth Era",
+  },
+  {
+    years: "1998 - 2010",
+    title: "Foundations & Legacy Mastery",
+    body: "Desarrollo de sistemas críticos con Clipper, Pascal y primeras versiones de .NET, con foco en lógica de negocio compleja.",
+    era: "Foundation Era",
+  },
 ];
 ---
 
